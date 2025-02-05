@@ -194,6 +194,13 @@ footer{
   ##Screen = B/w 768px to 1024px
 */
 
+.sidy-by-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media (max-width: 1024px) {
   .logo{
     margin: 0 auto;
@@ -205,6 +212,7 @@ footer{
     flex-direction: row;
   }
   .sidy-by-side{
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
