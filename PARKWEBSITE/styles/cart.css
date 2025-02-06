@@ -67,10 +67,14 @@ body, html{
     text-align: start;
   }
   
-  table thead, table tbody{
+  table thead{
     border-bottom: 1px solid #303030;
   }
-  
+  .Entreekaartje-Senior{
+    border-bottom: 1px solid #303030;
+  }
+
+
   table th.slim{
     width: 100px;
   }
@@ -104,6 +108,12 @@ body, html{
   
   .copyright{
     text-align: center;
+  }
+  .hidden-on-lg{
+    display: none;
+  }
+  .hidden-on-sm{
+    display: block;
   }
   /* 
     ##Device = Most of the Smartphones Mobiles (Portrait)
