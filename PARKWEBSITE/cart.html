@@ -57,7 +57,7 @@
                   <td class="btw" colspan="3">(incl. btw)</td>
               </tbody>
           </table>
-          <button>Dit is correct, verder naar betaling</button>
+          <button id="continue">Dit is correct, verder naar betaling</button>
         </div>
       </article>
     </div>
@@ -69,5 +69,10 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.getElementById("continue").addEventListener("click", function () {
+      document.location.href = "payment.html";
+    })
+  </script>
 </body>
 </html>
