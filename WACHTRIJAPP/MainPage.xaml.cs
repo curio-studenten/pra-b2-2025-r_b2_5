@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -62,7 +62,12 @@ namespace BugsOfHorrorXAML
             string node2 = doc.DocumentElement.SelectSingleNode("/Status/Kar02").InnerText;
             string status2 = ConvertStatus(node2);
             this.LabelKar2.Text = $"Kar 2: {status2}";
-        }
+
+            string node3 = doc.DocumentElement.SelectSingleNode("/Status/Kar03").InnerText;
+            string status3 = ConvertStatus(node3);
+            this.LabelKar3.Text = $"Kar 3: {status3}";
+
+    }
 
         private int BerekenWachtTijd()
 		{
@@ -80,59 +85,87 @@ namespace BugsOfHorrorXAML
             {
                 return WachtTijd;
             }
-            WachtTijd += 10;
+            WachtTijd += 6;
 
             string node02 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor02").InnerText;
             if (node02 == "False")
             {
                 return WachtTijd;
             }
-            WachtTijd += 5;
+            WachtTijd += 6;
 
             string node03 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor03").InnerText;
             if (node03 == "False")
             {
                 return WachtTijd;
             }
-            WachtTijd += 5;
+            WachtTijd += 4;
 
             string node04 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor04").InnerText;
             if (node04 == "False")
             {
                 return WachtTijd;
             }
-            WachtTijd += 5;
+            WachtTijd += 4;
 
             string node05 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor05").InnerText;
             if (node05 == "False")
             {
                 return WachtTijd;
             }
-            WachtTijd += 5;
+            WachtTijd += 4;
 
             string node06 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor06").InnerText;
             if (node06 == "False")
             {
                 return WachtTijd;
             }
-            WachtTijd += 5;
+            WachtTijd += 4;
 
             string node07 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor07").InnerText;
             if (node07 == "False")
             {
                 return WachtTijd;
             }
-            WachtTijd += 5;
+            WachtTijd += 4;
 
             string node08 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor08").InnerText;
             if (node08 == "False")
             {
                 return WachtTijd;
             }
-            WachtTijd += 5;
+            WachtTijd += 4;
+
+            string node09 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor08").InnerText;
+            if (node08 == "False")
+            {
+            return WachtTijd;
+            }
+            WachtTijd += 4;
+
+            string node10 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor07").InnerText;
+            if (node07 == "False")
+            {
+              return WachtTijd;
+            }
+            WachtTijd += 4;
+
+            string node11 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor08").InnerText;
+            if (node08 == "False")
+            {
+              return WachtTijd;
+            }
+            WachtTijd += 4;
+
+            string node12 = doc.DocumentElement.SelectSingleNode("/Sensoren/Sensor08").InnerText;
+            if (node08 == "False")
+            {
+              return WachtTijd;
+            }
+            WachtTijd += 4;
 
             return WachtTijd;
-        }
+              }
 
         //  Een methode welke een status-code omzet naar een status-beschrijving
         private string ConvertStatus(string StatusNr)
@@ -156,8 +189,12 @@ namespace BugsOfHorrorXAML
             {
                 return "Komt binnen";
             }
+            if (StatusNr == "5")
+            { 
+            return "In onderhoud";
+            }
 
-            return "";
+      return "";
         }
 	}
 }
